@@ -43,6 +43,7 @@ function compare(computer, player){
     else {
         return "tie";
     }
+}
 function playGame(){
 for(let i=1;i<=5;i++){
     // score of the computer and player ...
