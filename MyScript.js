@@ -19,50 +19,40 @@ function compare(computer, player){
     if(computer == "ROCK" && player == "PAPER"){
         playerscore++;
         return "You WIN! Paper beats Rock";
-        
     }
     else if(computer == "PAPER" && player == "ROCK"){
         computerscore++;
         return "You LOSE! Paper beats Rock";
-        
     }
     else if(computer == "SCISSOR" && player == "PAPER"){
         computerscore++;
         return "You LOSE! scissor beats paper";
-        
     }
     else if(computer == "SCISSOR" && player == "ROCK"){
         playerscore++;
         return "You WIN! rock beats scissor";
-        
     }
     else if(computer == "PAPER" && player == "SCISSOR"){
         playerscore++;
         return "You WIN! scissor beats paper";
-        
     }
     else if(computer == "ROCK" && player == "SCISSOR"){
         computerscore++;
         return "You LOSE! rock beats scissor";
-        
     }
-    else if(computer == "ROCK" && player == "ROCK"){
-        return "It's a tie";
+    else {
+        return "tie";
     }
-    else if(computer == "PAPER" && player == "PAPER"){
-        return "It's a tie";
-    }
-    else if(computer == "SCISSOR" && player == "SCISSOR"){
-        return "It's a tie";
-    }
-}
 function playGame(){
 for(let i=1;i<=5;i++){
+    // score of the computer and player ...
     console.log(computerscore);
     console.log(playerscore);
-    compare(getComputerChoice(),playerSelection());
-    console.log(getComputerChoice());
-}
+
+    //comparing and giving result..
+    console.log(compare(getComputerChoice(),playerSelection()));
+    }
+    //comparing the score..
     if(computerscore > playerscore){
         window.alert("computer win");
     }
