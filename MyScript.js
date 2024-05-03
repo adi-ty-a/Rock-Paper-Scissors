@@ -11,10 +11,8 @@ function getComputerChoice(){
         return "SCISSOR";
     }
 }
-function playerSelection(){
-    let choice = prompt("enter your choise 'Rock','Paper,'Scissor'");
-    return choice.toUpperCase();
-}
+
+
 function compare(computer, player){
     if(computer == "ROCK" && player == "PAPER"){
         playerscore++;
@@ -44,21 +42,26 @@ function compare(computer, player){
         return "tie";
     }
 }
-function playGame(){
-for(let i=1;i<=5;i++){
+
+function playGame(playerchoice){
+
     // score of the computer and player ...
     console.log(computerscore);
     console.log(playerscore);
 
     //comparing and giving result..
-    console.log(compare(getComputerChoice(),playerSelection()));
+    console.log(compare(getComputerChoice(),playerchoice));
     }
-    //comparing the score..
-    if(computerscore > playerscore){
-        window.alert("computer win");
-    }
-    else{
-        window.alert("player win");
-    }
-}
-playGame();
+
+let paper = document.querySelector("#paper");
+paper.addEventListener("click", (element)=>{
+    playGame("PAPER");
+    });
+let rock = document.querySelector("#rock");
+rock.addEventListener("click", (element)=>{
+    playGame("ROCK");
+    });
+let scissor = document.querySelector("#scissor");
+scissor.addEventListener("click", (element)=>{
+    playGame("SCISSOR");
+    });
