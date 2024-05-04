@@ -66,8 +66,8 @@ let scissor = document.querySelector("#scissor");
 scissor.addEventListener("click", (element)=>{
     playGame("SCISSOR");
     });
-
-button.addEventListener('click', ()=> {
+//scoreboard 
+document.addEventListener('click', ()=> {
     const display = document.querySelector("#display");
     const score = document.createElement("p");
     score.textContent ='Computer Score =' + computerscore +"| Your score = " + playerscore;
