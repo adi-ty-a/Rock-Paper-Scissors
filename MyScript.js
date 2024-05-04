@@ -1,4 +1,4 @@
-let computerscore=0,playerscore=0;
+let computerscore=0,playerscore=0,rounds =5,round=0;
 function getComputerChoice(){
     let num = Math.floor((Math.random()*3)+1);
     if(num == 1){
@@ -12,31 +12,31 @@ function getComputerChoice(){
     }
 }
 
-
+const roundcompare = document.querySelector('#compare');
 function compare(computer, player){
     if(computer == "ROCK" && player == "PAPER"){
         playerscore++;
-        return "You WIN! Paper beats Rock";
+        roundcompare.textContent= "You WIN! Paper beats Rock";
     }
     else if(computer == "PAPER" && player == "ROCK"){
         computerscore++;
-        return "You LOSE! Paper beats Rock";
+        roundcompare.textContent= "You LOSE! Paper beats Rock";
     }
     else if(computer == "SCISSOR" && player == "PAPER"){
         computerscore++;
-        return "You LOSE! scissor beats paper";
+        roundcompare.textContent= "You LOSE! scissor beats paper";
     }
     else if(computer == "SCISSOR" && player == "ROCK"){
         playerscore++;
-        return "You WIN! rock beats scissor";
+        roundcompare.textContent= "You WIN! rock beats scissor";
     }
     else if(computer == "PAPER" && player == "SCISSOR"){
         playerscore++;
-        return "You WIN! scissor beats paper";
+        roundcompare.textContent= "You WIN! scissor beats paper";
     }
     else if(computer == "ROCK" && player == "SCISSOR"){
         computerscore++;
-        return "You LOSE! rock beats scissor";
+        roundcompare.textContent= "You LOSE! rock beats scissor";
     }
     else {
         return "tie";
@@ -67,10 +67,22 @@ scissor.addEventListener("click", (element)=>{
     playGame("SCISSOR");
     });
 //scoreboard 
+const winner = document.querySelector('#winner');
+const displayround = document.querySelector('#round');
 document.addEventListener('click', ()=> {
-    
     const score = document.querySelector("#score");
-    score.textContent ='Computer Score =' + computerscore +"| Your score = " + playerscore;
-    
+    score.textContent ='Computer Score =' + computerscore +"| Your score = " + playerscore;   
+    round++;
+    displayround.textContent="round " + round;
+    if(round==5){
+        if(computerscore > playerscore){
+            winner.textContent ='COMPUTER WINS!'
+        }
+        else{
+            winner.textContent ='YOU WIN!'
+        }
+        } 
 })
-    
+
+
+
