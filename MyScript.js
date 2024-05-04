@@ -68,9 +68,9 @@ scissor.addEventListener("click", (element)=>{
     });
 //scoreboard 
 document.addEventListener('click', ()=> {
-    const display = document.querySelector("#display");
-    const score = document.createElement("p");
+    
+    const score = document.querySelector("#score");
     score.textContent ='Computer Score =' + computerscore +"| Your score = " + playerscore;
-    display.appendChild(score);
+    
 })
     
