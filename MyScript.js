@@ -45,13 +45,14 @@ function compare(computer, player){
 
 function playGame(playerchoice){
 
+    //comparing and giving result..
+    console.log(compare(getComputerChoice(),playerchoice));
+
     // score of the computer and player ...
     console.log(computerscore);
     console.log(playerscore);
-
-    //comparing and giving result..
-    console.log(compare(getComputerChoice(),playerchoice));
     }
+ // taking player choice
 
 let paper = document.querySelector("#paper");
 paper.addEventListener("click", (element)=>{
@@ -65,3 +66,11 @@ let scissor = document.querySelector("#scissor");
 scissor.addEventListener("click", (element)=>{
     playGame("SCISSOR");
     });
+
+button.addEventListener('click', ()=> {
+    const display = document.querySelector("#display");
+    const score = document.createElement("p");
+    score.textContent ='Computer Score =' + computerscore +"| Your score = " + playerscore;
+    display.appendChild(score);
+})
+    
